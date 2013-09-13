@@ -1,0 +1,17 @@
+= form_for(@form, url: post_path(@form.id), method: :put) do |f|
+  .input
+    = f.label(:title, "Title")
+    = f.text_field(:title)
+    %ul.errors
+      - @form.errors[:title].each do |error|
+        %ul= error
+
+  .input
+    = f.label(:body, "Body")
+    = f.text_area :body
+    %ul.errors
+      - @form.errors[:body].each do |error|
+        %ul= error
+
+  .actions
+    = f.submit

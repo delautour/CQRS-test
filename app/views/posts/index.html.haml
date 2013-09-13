@@ -1,0 +1,10 @@
+- @posts.each do |post|
+  %article
+    %header
+      %h2= link_to(post.title, edit_post_path(post))
+      %h3= post.author_name
+    %section
+      = post.body
+
+%footer
+  = link_to("Create new", new_post_path)

@@ -1,0 +1,24 @@
+= form_for(@form, url: posts_path) do |f|
+  .input
+    = f.label(:author_email, "Email")
+    = f.text_field(:author_email)
+    %ul.errors
+      - @form.errors[:author_email].each do |error|
+        %ul= error
+
+  .input
+    = f.label(:title, "Title")
+    = f.text_field(:title)
+    %ul.errors
+      - @form.errors[:title].each do |error|
+        %ul= error
+
+  .input
+    = f.label(:body, "Body")
+    = f.text_area :body
+    %ul.errors
+      - @form.errors[:body].each do |error|
+        %ul= error
+
+  .actions
+    = f.submit
